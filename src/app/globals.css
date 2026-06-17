@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 220 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
+
+    --primary: 220 45% 18%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 38 60% 94%;
+    --secondary-foreground: 220 45% 18%;
+
+    --muted: 40 20% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 38 75% 52%;
+    --accent-foreground: 220 45% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 38 75% 52%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 40 33% 96%;
+
+    --card: 220 30% 10%;
+    --card-foreground: 40 33% 96%;
+
+    --popover: 220 30% 10%;
+    --popover-foreground: 40 33% 96%;
+
+    --primary: 38 75% 52%;
+    --primary-foreground: 220 30% 8%;
+
+    --secondary: 220 25% 16%;
+    --secondary-foreground: 40 33% 96%;
+
+    --muted: 220 25% 16%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 38 75% 52%;
+    --accent-foreground: 220 30% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 25% 18%;
+    --input: 220 25% 18%;
+    --ring: 38 75% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-amber-400;
+  }
+  .dark .text-gradient-gold {
+    @apply from-amber-400 to-amber-200;
+  }
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      hsl(220 45% 12% / 0.75) 0%,
+      hsl(220 45% 18% / 0.45) 50%,
+      hsl(220 45% 12% / 0.65) 100%
+    );
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
