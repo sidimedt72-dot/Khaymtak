@@ -39,7 +39,11 @@ export async function middleware(request: NextRequest) {
   );
 
   // Refresh the auth session — do not sign out on missing session.
-  await supabase.auth.getSession();
+  try {
+    await supabase.auth.getSession();
+  } catch {
+    // Network/auth provider unreachable — continue without blocking the request.
+  }
 
   return response;
 }

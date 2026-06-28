@@ -9,6 +9,7 @@ import MobileNavbar from "./MobileNavbar";
 import SearchInput from "./SearchInput";
 import { SideMenu } from "./SideMenu";
 import { ThemeToggle } from "./ThemeToggle";
+import NavbarShell from "./NavbarShell";
 
 interface MainNavbarProps {
   adminLayout?: boolean;
@@ -16,17 +17,17 @@ interface MainNavbarProps {
 
 async function MainNavbar({ adminLayout = false }: MainNavbarProps) {
   return (
-    <nav className="bg-background/80 backdrop-blur-md fixed z-50 w-full border-b border-border/50">
+    <NavbarShell className={cn(!adminLayout && "max-md:hidden")}>
       <div
         className={cn(
           adminLayout
             ? "mx-auto px-[3rem] max-w-[2500px] py-3"
-            : "container py-3",
+            : "container py-4",
         )}
       >
         <div className="hidden md:flex gap-x-8 justify-between items-center">
           {/* Menu & branding */}
-          <div className="flex gap-x-3 items-center">
+          <div className="flex gap-x-4 items-center">
             <SideMenu />
             <Branding />
           </div>
@@ -34,9 +35,11 @@ async function MainNavbar({ adminLayout = false }: MainNavbarProps) {
           {adminLayout ? (
             <></>
           ) : (
-            <Suspense>
-              <SearchInput />
-            </Suspense>
+            <div className="flex-1 max-w-md mx-auto">
+              <Suspense>
+                <SearchInput />
+              </Suspense>
+            </div>
           )}
 
           {/* Nav Action */}
@@ -47,8 +50,8 @@ async function MainNavbar({ adminLayout = false }: MainNavbarProps) {
               <UserNav />
             </Suspense>
 
-            <Link href={"/wish-list"}>
-              <Icons.heart className="w-4 h-4" aria-label="wishlist" />
+            <Link href={"/wish-list"} aria-label="Liste de souhaits">
+              <Icons.heart className="w-[18px] h-[18px] transition-colors hover:text-accent" />
             </Link>
 
             <Suspense fallback={<CartLink productCount={0} />}>
@@ -59,7 +62,7 @@ async function MainNavbar({ adminLayout = false }: MainNavbarProps) {
 
         <MobileNavbar adminLayout={adminLayout} />
       </div>
-    </nav>
+    </NavbarShell>
   );
 }
 

@@ -15,8 +15,8 @@ import { SigninForm } from "@/features/auth";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "LocaEvent | Connexion",
-  description: "Connectez-vous à votre compte LocaEvent",
+  title: "Khaymtak Event | Connexion",
+  description: "Connectez-vous à votre compte Khaymtak Event",
 };
 
 export default function SignInPage() {

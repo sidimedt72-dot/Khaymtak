@@ -24,8 +24,8 @@ interface CategoryPageProps {
 
 export function generateMetadata({ params }: CategoryPageProps) {
   return {
-    title: `LocaEvent | ${toTitleCase(unslugify(params.collectionSlug))}`,
-    description: `Location de ${params.collectionSlug} — LocaEvent, matériel événementiel professionnel.`,
+    title: `Khaymtak Event | ${toTitleCase(unslugify(params.collectionSlug))}`,
+    description: `Location de ${params.collectionSlug} — Khaymtak Event, matériel événementiel professionnel.`,
   };
 }
 

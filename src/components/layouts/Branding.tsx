@@ -6,12 +6,16 @@ type Props = { className?: string };
 
 function Branding({ className }: Props) {
   return (
-    <Link href="/" className={cn("flex items-center gap-2 group", className)}>
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground text-sm font-bold transition-transform group-hover:scale-105">
-        LE
+    <Link
+      href="/"
+      className={cn("group flex flex-col items-start leading-none", className)}
+      aria-label="Khaymtak Event — accueil"
+    >
+      <span className="font-display text-2xl font-semibold tracking-tight">
+        Khaymtak<span className="text-accent"> Event</span>
       </span>
-      <span className="font-display text-xl font-semibold tracking-tight">
-        Loca<span className="text-accent">Event</span>
+      <span className="mt-0.5 text-[9px] font-medium uppercase tracking-luxe-wide text-muted-foreground transition-colors group-hover:text-accent">
+        Maison Événementielle
       </span>
     </Link>
   );

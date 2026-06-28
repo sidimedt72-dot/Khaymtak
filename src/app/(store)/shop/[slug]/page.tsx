@@ -26,8 +26,8 @@ type Props = {
   };
 };
 export const metadata: Metadata = {
-  title: `LocaEvent | Location de matériel événementiel`,
-  description: "Détail du produit — LocaEvent",
+  title: `Khaymtak Event | Location de matériel événementiel`,
+  description: "Détail du produit — Khaymtak Event",
 };
 
 const ProductDetailPageQuery = gql(/* GraphQL */ `

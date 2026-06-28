@@ -90,29 +90,35 @@ function MainFooter() {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground mt-20 md:mt-32">
-      <div className="container pb-10 pt-10 md:pt-14">
-        <div className="hidden md:grid grid-cols-5 mb-16 gap-x-16 place-content-between">
-          <div className="max-w-md col-span-5 lg:col-span-2">
-            <h3 className="font-display text-2xl font-semibold mb-2">
-              Restez informé
-            </h3>
-            <p className="text-sm text-primary-foreground/70 mb-4">
-              Recevez nos offres et nouveautés pour vos prochains événements.
-            </p>
+    <footer className="relative mt-24 overflow-hidden bg-primary text-primary-foreground md:mt-36">
+      <div className="container pb-10 pt-16 md:pt-24">
+        <div className="mb-14 max-w-2xl">
+          <span className="text-[11px] font-medium uppercase tracking-luxe text-accent">
+            Maison événementielle
+          </span>
+          <h2 className="mt-4 font-display text-4xl font-light leading-tight md:text-5xl">
+            Composons ensemble votre
+            <span className="text-gradient-gold"> prochain chef-d&apos;œuvre</span>
+          </h2>
+        </div>
+
+        <div className="mb-16 hidden grid-cols-5 place-content-between gap-x-16 md:grid">
+          <div className="col-span-5 max-w-md lg:col-span-2">
             <NewsletterForm />
           </div>
 
-          <div className="grid grid-cols-3 col-span-5 lg:col-span-3 gap-x-8 max-w-[680px]">
+          <div className="col-span-5 grid max-w-[680px] grid-cols-3 gap-x-8 lg:col-span-3">
             {footerSiteMap.map(({ title, items }, index) => (
               <div key={index}>
-                <p className="font-semibold mb-4 text-accent">{title}</p>
-                <div className="flex flex-col gap-y-2.5">
+                <p className="mb-5 text-[11px] font-medium uppercase tracking-luxe text-accent">
+                  {title}
+                </p>
+                <div className="flex flex-col gap-y-3">
                   {items?.map((i, idx) => (
                     <Link
                       href={i.href || ""}
                       key={idx}
-                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+                      className="text-sm text-primary-foreground/65 transition-colors hover:text-accent"
                     >
                       {i.title}
                     </Link>
@@ -123,15 +129,15 @@ function MainFooter() {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/10 pt-8 flex gap-x-5 justify-between flex-col md:flex-row md:items-center items-start">
-          <div className="flex flex-col md:flex-row gap-x-6 md:items-center items-start mb-4 md:mb-0">
+        <div className="flex flex-col items-start justify-between gap-x-5 border-t border-primary-foreground/10 pt-8 md:flex-row md:items-center">
+          <div className="mb-4 flex flex-col items-start gap-x-8 md:mb-0 md:flex-row md:items-center">
             <Branding className="[&_span]:text-primary-foreground [&_.text-accent]:text-accent" />
-            <div className="text-xs text-primary-foreground/60 mt-2 md:mt-0">
+            <div className="mt-3 text-xs text-primary-foreground/60 md:mt-0">
               <p>{siteConfig.address}</p>
               <p>
                 {siteConfig.phone} /{" "}
                 <Link
-                  className="hover:underline hover:text-accent transition-colors"
+                  className="transition-colors hover:text-accent hover:underline"
                   href={`mailto:${siteConfig.email}`}
                 >
                   {siteConfig.email}
@@ -140,11 +146,15 @@ function MainFooter() {
             </div>
           </div>
 
-          <SocialMedias containerClassName="mr-0 md:mr-4" />
+          <SocialMedias
+            containerClassName="mr-0 md:mr-4"
+            itemsClassName="text-primary-foreground/60 hover:text-accent"
+          />
         </div>
 
-        <p className="text-center text-xs text-primary-foreground/40 mt-8">
-          © {new Date().getFullYear()} LocaEvent — Tous droits réservés
+        <p className="mt-8 text-center text-xs text-primary-foreground/40">
+          © {new Date().getFullYear()} Khaymtak Event — Maison de création
+          événementielle. Tous droits réservés.
         </p>
       </div>
     </footer>

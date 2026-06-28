@@ -3,13 +3,14 @@ import type { NavItemWithOptionalChildren } from "@/types";
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "LocaEvent",
+  name: "Khaymtak Event",
   description:
-    "Location de matériel événementiel — tentes, stands, mobilier et équipements pour tous vos événements.",
-  url: "https://locaevent.fr",
-  address: "12 Avenue des Événements, 75008 Paris, France",
-  phone: "+33 1 23 45 67 89",
-  email: "contact@locaevent.fr",
+    "Maison de création événementielle de luxe — scénographie, tentes d'exception, décoration de mariage et réceptions VIP.",
+  url: "https://khaymtak.com",
+  address: "Nouakchott, Mauritanie",
+  phone: "+222 33 37 37 58",
+  whatsapp: "22233373758",
+  email: "contact@khaymtak.com",
   mainNav: [
     {
       title: "Catalogue",
